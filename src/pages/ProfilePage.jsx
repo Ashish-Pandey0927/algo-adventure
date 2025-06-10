@@ -18,7 +18,7 @@ const ProfilePage = () => {
 
   return (
     <div className="min-h-screen bg-[#09181f] flex items-center justify-center px-4" style={{ padding: '2rem' }}>
-      <div className=" text-[#fcf7d1] rounded-lg shadow-md w-[100vh] max-w-md p-6 flex flex-col gap-4" style={{ padding: '1.5rem' }}>
+      <div className=" text-[#fcf7d1] rounded-lg w-[100vh] max-w-md p-6 flex flex-col gap-4" style={{ padding: '1.5rem' }}>
         <h1 className="text-2xl font-semibold text-center text-[#c5a46d]">
           PROFILE
         </h1>

@@ -50,7 +50,7 @@ const PlayArea = () => {
     setLoading(true);
     const version = LANGUAGE_VERSIONS[language];
     try {
-      const res = await axios.post("https://emkc.org/api/v2/piston/execute", {
+      const res = await axios.post("http://localhost:5001/run", {
         language,
         version,
         files: [
@@ -68,6 +68,7 @@ const PlayArea = () => {
           },
         ],
       });
+
       setOutput(res.data.run.output);
     } catch (err) {
       console.error("Error executing code:", err.response?.data || err.message);

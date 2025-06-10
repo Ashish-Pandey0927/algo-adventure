@@ -16,7 +16,7 @@ const App = () => {
     <Router>
       <AuthProvider>
         <div className="bg-[#0d1b23] min-h-screen text-white">
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/auth" element={<AuthPage />} />

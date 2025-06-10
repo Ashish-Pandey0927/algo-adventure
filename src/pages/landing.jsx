@@ -1,12 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
-  const handleStart = () => {
-    navigate('/map');
-  };
+  const handleStart = () => navigate("/map");
+  const goToAuth = () => navigate("/auth");
+  const goToProfile = () => navigate("/profile");
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -21,29 +21,56 @@ const LandingPage = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay Text */}
+      {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-        <h1 className="text-5xl md:text-7xl font-extrabold drop-shadow-lg">
-          AlgoAdventure
-        </h1>
-        <p className="mt-4 text-xl md:text-2xl font-medium drop-shadow-md" style={{ marginTop: '1rem' }}>
+        {/* Top Center Image */}
+        <img
+          className="h-1/4 absolute top-[4.5rem]"
+          src="/Arcade Gamer/5.png"
+          alt="Main character"
+        />
+
+        {/* Tagline */}
+        <p className="mt-4 text-xl md:text-2xl font-medium drop-shadow-md">
           Travel through time to master DSA
         </p>
+
+        {/* Start Game Button */}
         <button
           onClick={handleStart}
-          className="mt-8 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold rounded-lg shadow-lg transition duration-300"
-          style={{ marginTop: '2rem', padding: '0.75rem 1.5rem' }}
+          title="Start Game"
+          className="absolute bottom-10 right-10 z-20 transition-transform hover:scale-105"
         >
-          Start Your Adventure
+          <img
+            className="h-[100px] pointer-events-none"
+            src="/Arcade Gamer/1.png"
+            alt="Start Game"
+          />
         </button>
+
+        {/* Profile Icon (Top Left) */}
+        <img
+          className="h-[100px] absolute top-10 left-10 cursor-pointer"
+          src="/Arcade Gamer/3.png"
+          alt="Profile"
+          onClick={goToProfile}
+        />
+
+        {/* Auth Icon (Bottom Left) */}
+        <img
+          className="h-[100px] absolute bottom-10 left-10 cursor-pointer"
+          src="/Arcade Gamer/2.png"
+          alt="Auth"
+          onClick={goToAuth}
+        />
       </div>
 
-      {/* Cloud Animation */}
-      <div className="absolute bottom-0 left-0 w-full h-40 z-10 overflow-hidden">
+      {/* Cloud Animation (Optional, add clouds if needed) */}
+      {/* <div className="absolute bottom-0 left-0 w-full h-40 z-10 overflow-hidden">
         <div className="cloud w-40 h-12 left-[10%] bottom-10" />
         <div className="cloud w-56 h-14 left-[40%] bottom-12 delay-10" />
         <div className="cloud w-48 h-10 left-[70%] bottom-8 delay-20" />
-      </div>
+      </div> */}
 
       {/* Custom CSS */}
       <style>{`
